@@ -1,0 +1,42 @@
+class Score: #상속을 안할때는 (object)를 쓰지 않음
+    def __init__(self,student):
+        tmp = student.split(",")
+        self.name = tmp[0]
+        self.midtern = int(tmp[1])
+        self.final = int(tmp[2])
+        self.assignment = int(tmp[3])
+        self.score = None
+        self.grade = None
+    def total_score(self):
+        test_score = ((self.midtern + self.final)/2)*0.8
+
+        if self.assignment>=3:
+            assign_score = 20
+        elif self.assignment>=2:
+            assign_score = 10
+        elif self.assignment>=1:
+            assign_score = 5
+        else:
+            assign_score =0
+        self.score = test_score + assign_score
+
+    def total_grade(self):
+        if self.assignment ==0:
+            grade = "F"
+        elif self.assignment >=90:
+            grade = "A"
+        elif self.assignment >=70:
+            grade = "B"
+        elif self.assignment >=60:
+            grade = "C"
+        else:
+            grade = "D"
+        self.grade = grade
+        return grade
+
+student_john = Score("john, 90, 90, 0")
+aa = student_john.total_score()
+bb = student_john.total_grade()
+print(aa,bb,student_john.score,student_john.grade)
+
+
