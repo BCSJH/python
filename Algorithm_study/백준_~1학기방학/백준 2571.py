@@ -1,9 +1,11 @@
-#2751
-lists = []
-ins = int(input())
-for _ in range(ins):
-    a = int(input())
-    lists.append(a)
-lists.sort(reverse=False)
-for i in range(len(lists)):
-    print(lists[i])
+#2751번
+n = int(input())
+a=[]
+for i in range(n):
+    a[i]= int(input())
+a.sort()
+for i in range(len(a)-1):
+    if a[i] == a[i+1]:
+        a.remove(i+1)
+for i in range(len(a)):
+    print(a[i])
