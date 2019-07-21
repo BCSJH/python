@@ -1,7 +1,7 @@
+#15596
+
 def solve(a):
     ans = 0
-    for i in range(a):
-        ans += (i+1)
+    for n in range(1,len(a)):
+        ans += int(a[n])
     return ans
-a = int(input())
-print(solve(a))
