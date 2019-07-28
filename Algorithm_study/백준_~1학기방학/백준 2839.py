@@ -6,5 +6,8 @@ for i in range(int(f/5)+1):
         if i*5 + ii*3 == f:
             if counts>i+ii:
                 counts = i+ii
-print(counts)
+if counts ==f:
+    print(-1)
+else:
+    print(counts)
 #5x + 3y = f
