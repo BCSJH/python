@@ -20,7 +20,7 @@ def solution(N, stages):
     #print(answer_count)
     #for i in range(N+1):
     #    answer.append(float(int(answer_count[i])/N))
-    for i in range(0,N+1):
+    for i in range(0, N+1):
         sums_u = 0
         sums_d = 0
         print("i : ",i)
@@ -36,10 +36,18 @@ def solution(N, stages):
         print("sums_u ; ", sums_u)
         print("stages ; ", len(stages))
         print("sums_d ; ", sums_d)
-        answer_count_percent[i+1] = ((sums_u) / (len(stages) - sums_d))
+        print()
+        print("츨력 : ", answer_count_percent)
+        print()
+        try:
+            answer_count_percent[i+1] = ((sums_u) / (len(stages) - sums_d))
+        except ZeroDivisionError:
+            answer_count_percent[i+1] = 0
         #answer_count_percent.append((sums_u)/(len(stages)-sums_d))
+
     answer_dic = sorted(answer_count_percent.items(), key=lambda x: x[1], reverse=True)
     #answer_dic = sorted(answer_count_percent.items(), key=operator.itemgetter(1))
+
     print(answer_count_percent)
     print(answer_dic)
     print(answer_count)
@@ -47,5 +55,6 @@ def solution(N, stages):
 
     return answer
 
-print("정답" + solution(5,[2,1,2,6,2,4,3,3]))
-print("정답" + solution(4,[4,4,4,4,4]))
+print("정답" , solution(5,[2,1,2,6,2,4,3,3]))
+
+print("정답" , solution(4,[4,4,4,4,4]))
